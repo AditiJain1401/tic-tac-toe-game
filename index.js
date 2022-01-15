@@ -91,10 +91,11 @@ function checkWin() {
         if (a === b && b === c) {
             showWinningText();
             changeWinningBlocksColor(winCombo);
-            return;
+            return true;
         }
     }
     changePlayer();
+    return false;
 }
 
 function showRestartButton() {
@@ -109,7 +110,9 @@ function addMove(block, index) {
             block.innerText = currentPlayer;
             updateBoard(index);
             checkWin();
-            checkDraw();
+            if(!checkWin()){
+            checkDraw()
+            }
         }
     }
 }
@@ -135,116 +138,3 @@ blocks.forEach((block, index) => {
 })
 
 
-/*
-//---------------------moves-------------------
-var id1 = document.querySelector("#block1");
-var id2 = document.querySelector("#block2");
-var id3 = document.querySelector("#block3")
-var id4 = document.querySelector("#block4")
-var id5 = document.querySelector("#block5")
-var id6 = document.querySelector("#block6")
-var id7 = document.querySelector("#block7")
-var id8 = document.querySelector("#block8")
-var id9 = document.querySelector("#block9")
-
-//--------to add event----------------------
-id1.addEventListener("click", function() {
-    if (id1.innerHTML) {
-        if (currentPlayer == players.player1) {
-            id1.innerText = "X"
-        } else {
-            id1.innerText = "O"
-        }
-        if checkWin( {
-            showWinningText();
-        }
-        playerChange();
-    }
-
-});
-id2.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id2.innerText = "X"
-    } else {
-        id2.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id3.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id3.innerText = "X"
-    } else {
-        id3.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id4.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id4.innerText = "X"
-    } else {
-        id4.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id5.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id5.innerText = "X"
-    } else {
-        id5.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id6.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id6.innerText = "X"
-    } else {
-        id6.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id7.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id7.innerText = "X"
-    } else {
-        id7.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-id8.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id8.innerText = "X"
-    } else {
-        id8.innerText = "O"
-    }
-    playerChange();
-});
-id9.addEventListener("click", function() {
-    if (currentPlayer == players.player1) {
-        id9.innerText = "X"
-    } else {
-        id9.innerText = "O"
-    }
-    if checkWin( {
-        showWinningText();
-    }
-    playerChange();
-});
-*/
